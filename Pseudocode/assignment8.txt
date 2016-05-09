@@ -1,0 +1,113 @@
+class CheckingAccount
+	Declarations
+		private String accountHolderName
+		private String accountID
+		private double accountTotal
+	Public CheckingAccount(String name, String ID)
+	{
+		accountHolderName = name
+		accountID = ID
+		accountTotal = 0
+	}
+	public void setAccountTotal(double num)
+	{
+		accountTotal += num
+	}
+	public void setAccountHolderName(String name)
+	{
+		accountHolderName = name
+	}
+	public void setAccountID(String ID)
+	{
+		accountID = ID
+	}
+	public String getAccountHolderName()
+	{
+		return accountHolderName
+	}
+	public String getAccountID()
+	{
+		return accountID
+	}
+	public double getAccountTotal()
+	{
+		return accountTotal
+	}
+EndClass
+
+Start
+	Declarations
+		String Name = ""
+		String ID = ""
+		double negNumber
+		double posNumber
+		CheckingAccount account1 = new CheckingAccount("","")
+	If(btnSetName == pressed)
+		setName()
+	EndIf
+	While(quit != pressed)
+		If(btnEnterWithdraw == pressed)
+			withdraw()
+		EndIf
+		If(btnEnterDeposit == pressed)
+			deposit()
+		EndIf
+	EndWhile
+	
+Stop
+		
+setName()
+	Input Name
+	ID = getNumber()
+	makeTheAccount()
+RETURN
+
+public String getNumber()
+	String Id=""
+	Random gen = new Random()
+	for(num i = 0; i < 4; i++)
+		num part = gen.netInt(10)
+		ID +=part
+	EndFor
+RETURN ID
+
+makeTheAccount()
+	account1.setAccountHolderName(Name)
+	account1.setAccountID(ID)
+	loadContent()
+RETURN
+
+loadContent()
+	Output account1.getAccountHolderName()
+	Output account1.getAccountID()
+	GUI Display stuff
+RETURN
+
+withdraw()
+	num  testForNeg = account1.getAccountTotal()
+	negNumber = 0
+	input (from TextBox)String withdrawString
+	negNumber = Double.parseDouble(withdrawString)
+	negNumber *=-1
+	If(testForNeg + negNumber > 0)
+		account1.setAccountTotal(negNumber)
+		setTotal()
+	Else
+		Output (toTextBox) "sorry can't withdraw $"+negNumber*-1 +"."
+	EndIf
+RETURN
+
+deposit()
+	posNumber = 0
+	Input(from a textBox)String depositsString
+	posNumber = Double.parseDouble(depositsString)
+	posNumber*=1
+	account1.setAccountTotal(posNumber)
+	setTotal()
+RETURN
+
+setTotal()
+	double number = account1.getAccountTotal()
+	String total = String.valueOf(number)
+	Output (to a textBoX) "$"+toatl
+RETURN
