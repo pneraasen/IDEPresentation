@@ -43,6 +43,7 @@ public class Tester extends JFrame {
 	private JButton btnEnterDeposit;
 	private JTextField txtDisplayTotal;
 	private JTextField txtCantWithdraw;
+	private JTextField txtCEO;
 	/**
 	 * Launch the application.
 	 */
@@ -80,7 +81,7 @@ public class Tester extends JFrame {
 				System.exit(0);
 			}
 		});
-		mnFile.add(mntmQuit);
+		
 /***********************top menu bar End***********************/
 		mainContentPanel = new JPanel();
 		mainContentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -97,7 +98,6 @@ public class Tester extends JFrame {
 		txtTitle.setBounds(10, 11, 992, 69);
 		mainContentPanel.add(txtTitle);
 		txtTitle.setColumns(10);
-		
 		JButton btnCreateAccount = new JButton("Make a Bank Account");
 		btnCreateAccount.addMouseListener(new MouseAdapter() {
 			@Override
@@ -109,6 +109,20 @@ public class Tester extends JFrame {
 		});
 		btnCreateAccount.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 		btnCreateAccount.setBounds(227, 279, 558, 88);
+		
+		JMenuItem mntmNew = new JMenuItem("New");
+		mntmNew.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				ResetGame();
+				btnCreateAccount.setVisible(true);
+				btnCreateAccount.setEnabled(true);
+			}
+		});
+		mnFile.add(mntmNew);
+		mnFile.add(mntmQuit);
+		
+		
 		mainContentPanel.add(btnCreateAccount);
 		
 		txtPleaseMakeAn = new JTextField();
@@ -257,6 +271,16 @@ public class Tester extends JFrame {
 		txtCantWithdraw.setBounds(373, 426, 267, 20);
 		mainContentPanel.add(txtCantWithdraw);
 		txtCantWithdraw.setColumns(10);
+		
+		txtCEO = new JTextField();
+		txtCEO.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCEO.setText("CEO:Amalan Pulendran");
+		txtCEO.setFont(new Font("Traditional Arabic", Font.ITALIC, 22));
+		txtCEO.setBackground(SystemColor.menu);
+		txtCEO.setBorder(null);
+		txtCEO.setBounds(196, 75, 619, 56);
+		mainContentPanel.add(txtCEO);
+		txtCEO.setColumns(10);
 		txtDeposit.setVisible(false);
 		txtDisplayTotal.setVisible(false);
 		
@@ -349,6 +373,25 @@ public class Tester extends JFrame {
 		txtDisplayTotal.setForeground(new Color(0, 128, 0));
 		txtDisplayTotal.setText("$"+total);
 		
+		
+	}
+	public void ResetGame()
+	{
+		//Resetting
+		txtPleaseMakeAn.setVisible(true);
+		btnEnterWithdraw.setVisible(false);
+		textFieldEnterName.setText("");
+		txtDisplayTotal.setText("");
+		txtDisplayName.setText("");
+		txtDisplayID.setText("");
+		btnEnterDeposit.setVisible(false);
+		txtUsersWithdrawBox.setVisible(false);
+		txtUserDepositBox.setVisible(false);
+		txtDisplayTotal.setVisible(false);
+		txtWithdraw.setVisible(false);
+		txtDeposit.setVisible(false);
+		
+
 		
 	}
 }
