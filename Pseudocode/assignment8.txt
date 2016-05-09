@@ -52,6 +52,9 @@ Start
 		If(btnEnterDeposit == pressed)
 			deposit()
 		EndIf
+		If(btnNew == pressed)
+			ResetGame()
+		EndIf
 	EndWhile
 	
 Stop
@@ -110,4 +113,8 @@ setTotal()
 	double number = account1.getAccountTotal()
 	String total = String.valueOf(number)
 	Output (to a textBoX) "$"+toatl
+RETURN
+
+ResetGame()
+	Resets games Display so they match the starts
 RETURN
