@@ -273,6 +273,7 @@ public class Tester extends JFrame {
 		txtCantWithdraw.setColumns(10);
 		
 		txtCEO = new JTextField();
+		txtCEO.setEditable(false);
 		txtCEO.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCEO.setText("CEO:Amalan Pulendran");
 		txtCEO.setFont(new Font("Traditional Arabic", Font.ITALIC, 22));
