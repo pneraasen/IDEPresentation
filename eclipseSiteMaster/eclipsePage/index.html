@@ -64,6 +64,8 @@
 	 * --------------------------------------- */
 	#section1 h1{
 		color: #444;
+		margin-bottom: 20px;
+		
 	}
 	
 	.bigger {font-size: 150px}
@@ -74,10 +76,19 @@
 		padding-left:20px;
 		text-align:left;
 		font-size:30px;
+		margin-bottom: 20px;
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+	#history
+	{
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-bottom: 50px;
 	}
 	#section1 img{
 		margin: 20px 0;
-		opacity: 0.7;
+		opacity: .9;
 	}
 	
 	}
@@ -89,8 +100,13 @@
 		z-index: 3;
 	}
 	#section2 p{
-		opacity: 0.8;
+		opacity: 0.7;
 		text-align:left;
+	}
+	#KS
+	{
+		margin-left: 18%;
+		
 	}
 
 	#section2 #colors{
@@ -109,8 +125,15 @@
 		left: 60px;
 		bottom: 0;
 	}
+	#section3 h1
+	{
+		margin-left: 30px;
+	}
+	
 	#section3 p{
-		text-align:left;
+		text-align:center;
+		margin-bottom: 20px;
+		opacity: 1;
 	}
 	#section3 h2, h3 {
 		text-align:center;
@@ -142,16 +165,17 @@
 	/* Section 4
 	 * --------------------------------------- */
 	#section4 p{
-		opacity: 0.6;
+		opacity: .9;
 		text-align:left;
 	}
 	
-	
-	
-	
-	
-	
-	
+	#SP
+	{
+		margin-left: 12%;
+		margin-right: 10%;
+		margin-top: 20px;
+		
+	}
 
 	/* Overwriting fullPage.js tooltip color
 	* --------------------------------------- */
@@ -181,40 +205,43 @@
 	<div id="pagepiling">
 	    <div class="section" id="section1">
 			<img src="imgs/eclipseLogo.jpg" alt="logo" />
-	    	<h1>History</h1>
+	    	<h1><u>History</u></h1>
 			<p>HISTORY OF IDE:</p>
-	<p>Eclipse was starting to be created in the late 1990s. The goal of Eclipse was to bring developers closer to Java-based middleware. Was based on the idea of having a open and free platform. In computer programming, Eclipse is an integrated development environment (IDE). It contains a base workspace and an extensible plug-in system for customizing the environment. Written mostly in Java, Eclipse can be used to develop applications.</p>
-			
+			<div id="history">
+			<p>Eclipse was starting to be created in the late 1990s.  The goal of Eclipse was to bring developers closer to Java-based middleware.  Was based on the idea of having a open and free platform.  In computer programming, Eclipse is an integrated development environment (IDE).  It contains a base workspace and an extensible plug-in system for customizing the environment.  Written mostly in Java, Eclipse can be used to develop applications.</p>
+			</div>
 
 	    </div>
 	    <div class="section" id="section2">
 	    	<div class="intro">
 	    		
-	    		<h1>Keyboard Shortcuts</h1>
+	    		<h1><u>Keyboard Shortcuts</u></h1>
 					<br />
 					<br />
 					<br />
-					<p>Ctrl + F11 ----------- Save and launch Application</p>
-					<p>F11 ------------------ Debug</p>
-					<p>F4 ------------------- Show tooltip</p>
-					<p>Ctrl + Shift + / ----- add comment</p>
-					<p>Ctrl+= --------------- zoom in</p>
-					<p>Ctrl+-  -------------- zoom out</p>
-					<p>Alt +/ --------------- word completer</p>
-					<p>Ctrl + Alt + Up ------ Duplicate Line</p>
-					<p>Ctrl + Shift + L------ Shortcut list</p>
+					<div id="KS">
+					<p><b>Ctrl + F11</b> ----------- Save and launch Application</p>
+					<p><b>F11</b> ------------------ Debug</p>
+					<p><b>F4</b> ------------------- Show tooltip</p>
+					<p><b>Ctrl + Shift + /</b> ----- add comment</p>
+					<p><b>Ctrl+=</b> --------------- zoom in</p>
+					<p><b>Ctrl+-</b>  -------------- zoom out</p>
+					<p><b>Alt +/</b> --------------- word completer</p>
+					<p><b>Ctrl + Alt + Up</b> ------ Duplicate Line</p>
+					<p><b>Ctrl + Shift + L</b>------ Shortcut list</p>
+					</div>
 
 	    	</div>
 	    </div>
 	    <div class="section" id="section3">
 	    	<div class="intro">
-	    		<h1>Strengths and Weaknesses</h1>
+	    		<h1><u>Strengths and Weaknesses</u></h1>
 					<br />
 	    		<h2>Why Eclipse?</h2>
 					<br />
 				<h3>Pros:</h3>
 					<br />
-				<p>Easily Updates, no zipping/unzipping files</p>
+				<p>Easily Updates, no zipping/unzipping files.</p>
 					<br />
 				<p>Enterprise Java Tooling: makesis easy to control
 					and deploy to your server of choice.</p>
@@ -223,13 +250,13 @@
 					you can have Synchronisation between design and implementation using 
 					this tool.</p>
 					<br />
-				<p>FREE</p>
+				<p>ITS FREE</p>
 					
 					
 				<h3>Cons:</h3>
 					<br />
 				<p>The more plugins, the more can go wrong, lack 
-					of quality control</p>
+					of quality control.</p>
 					<br />
 				<p>Not all languages supported. </p>
 				</p>
@@ -238,12 +265,14 @@
 	    </div>
 	    <div class="section" id="section4">
 	    	<div class="intro">
-	    		<h1>Specs and Plugins</h1>
+	    		<h1><u>Specs and Plugins</u></h1>
 				<br />
-	    		<p>Windows operating system and Java Runtime Environment (JRE)</p>
-				<br />
-	    		<p>Contains an existensible plugin environment for customization.  Users can utilize, write, and contribute plugins </p>
-	    	</div>
+				<div id="SP">
+					<p>Windows operating system and Java Runtime Environment (JRE)</p>
+					<br />
+					<p>Contains an existensible plugin environment for customization.  Users can utilize, write, and contribute plugins </p>
+				</div>
+			</div>
 	    </div>
 		
 	</div>
