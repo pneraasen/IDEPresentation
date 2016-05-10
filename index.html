@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Eclipse Mars</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="pagePiling.js plugin by Alvaro Trigo." />
+	<meta name="keywords"  content="pile,piling,piling.js,stack,pages,scrolling,stacking,touch,fullpile,scroll,plugin,jquery" />
+	<meta name="Resource-type" content="Document" />
+
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,700" />
+	<link rel="stylesheet" type="text/css" href="../jquery.pagepiling.css" />
+	<link rel="stylesheet" type="text/css" href="examples.css" />
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+	<script type="text/javascript" src="../jquery.pagepiling.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			/*
+			* Plugin intialization
+			*/
+	    	$('#pagepiling').pagepiling({
+	    		menu: '#menu',
+	    		anchors: ['page1', 'page2', 'page3', 'page4'],
+			    sectionsColor: ['white', '#ee005a', '#2C3E50', '#39C'],
+			    navigation: {
+			    	'position': 'right',
+			   		'tooltips': ['Page 1', 'Page 2', 'Page 3', 'Page 4']
+			   	},
+			    afterRender: function(){
+			    	$('#pp-nav').addClass('custom');
+			    },
+			    afterLoad: function(anchorLink, index){
+			    	if(index>1){
+			    		$('#pp-nav').removeClass('custom');
+			    	}else{
+			    		$('#pp-nav').addClass('custom');
+			    	}
+			    }
+			});
+
+
+			/*
+		    * Internal use of the demo website
+		    */
+		    $('#showExamples').click(function(e){
+				e.stopPropagation();
+				e.preventDefault();
+				$('#examplesList').toggle();
+			});
+
+			$('html').click(function(){
+				$('#examplesList').hide();
+			});
+	    });
+    </script>
+
+
+    <style>
+    /* Section 1
+	 * --------------------------------------- */
+	#section1 h1{
+		color: #444;
+	}
+	
+	.bigger {font-size: 150px}
+	
+	#section1 p{
+		color: #333;
+		float:left;
+		padding-left:20px;
+		text-align:left;
+		font-size:30px;
+	}
+	#section1 img{
+		margin: 20px 0;
+		opacity: 0.7;
+	}
+	
+	}
+
+	/* Section 2
+	 * --------------------------------------- */
+	#section2 h1,
+	#section2 p{
+		z-index: 3;
+	}
+	#section2 p{
+		opacity: 0.8;
+		text-align:left;
+	}
+
+	#section2 #colors{
+		right: 60px;
+		bottom: 0;
+		position: absolute;
+		height: 413px;
+		width: 258px;
+		background-image: url(imgs/colors.gif);
+		background-repeat: no-repeat;
+	}
+
+	/* Section 3
+	 * --------------------------------------- */
+	#section3 #colors{
+		left: 60px;
+		bottom: 0;
+	}
+	#section3 p{
+		text-align:left;
+	}
+	#section3 h2, h3 {
+		text-align:center;
+		}
+		
+	#section3 h2 {
+		font-size:60px;
+	}
+	#colors2,
+	#colors3{
+		position: absolute;
+		height: 163px;
+		width: 362px;
+		z-index: 1;
+		background-repeat: no-repeat;
+		left: 0;
+		margin: 0 auto;
+		right: 0;
+	}
+	#colors2{
+		background-image: url(imgs/colors2.gif);
+		top:0;
+	}
+	#colors3{
+		background-image: url(imgs/colors3.gif);
+		bottom:0;
+	}
+
+	/* Section 4
+	 * --------------------------------------- */
+	#section4 p{
+		opacity: 0.6;
+		text-align:left;
+	}
+	
+	
+	
+	
+	
+	
+	
+
+	/* Overwriting fullPage.js tooltip color
+	* --------------------------------------- */
+	#pp-nav.custom .pp-tooltip{
+		color: #AAA;
+	}
+	#markup{
+		display: block;
+		width: 450px;
+		margin: 20px auto;
+		text-align: left;
+	}
+
+</style>
+
+</head>
+<body>
+	<ul id="menu">
+		<li data-menuanchor="page1" class="active"><a href="#page1">History</a></li>
+		<li data-menuanchor="page2"><a href="#page2">Keyboard Shortcuts</a></li>
+		<li data-menuanchor="page3"><a href="#page3">Strengths and Weaknesses</a></li>
+		<li data-menuanchor="page4"><a href="#page4">Specs and Plugins</a></li>
+		
+	</ul>
+
+
+	<div id="pagepiling">
+	    <div class="section" id="section1">
+			<img src="imgs/eclipseLogo.jpg" alt="logo" />
+	    	<h1>History</h1>
+			<p>HISTORY OF IDE:</p>
+	<p>Eclipse was starting to be created in the late 1990s. The goal of Eclipse was to bring developers closer to Java-based middleware. Was based on the idea of having a open and free platform. In computer programming, Eclipse is an integrated development environment (IDE). It contains a base workspace and an extensible plug-in system for customizing the environment. Written mostly in Java, Eclipse can be used to develop applications.</p>
+			
+
+	    </div>
+	    <div class="section" id="section2">
+	    	<div class="intro">
+	    		
+	    		<h1>Keyboard Shortcuts</h1>
+					<br />
+					<br />
+					<br />
+					<p>Ctrl + F11 ----------- Save and launch Application</p>
+					<p>F11 ------------------ Debug</p>
+					<p>F4 ------------------- Show tooltip</p>
+					<p>Ctrl + Shift + / ----- add comment</p>
+					<p>Ctrl+= --------------- zoom in</p>
+					<p>Ctrl+-  -------------- zoom out</p>
+					<p>Alt +/ --------------- word completer</p>
+					<p>Ctrl + Alt + Up ------ Duplicate Line</p>
+					<p>Ctrl + Shift + L------ Shortcut list</p>
+
+	    	</div>
+	    </div>
+	    <div class="section" id="section3">
+	    	<div class="intro">
+	    		<h1>Strengths and Weaknesses</h1>
+					<br />
+	    		<h2>Why Eclipse?</h2>
+					<br />
+				<h3>Pros:</h3>
+					<br />
+				<p>Easily Updates, no zipping/unzipping files</p>
+					<br />
+				<p>Enterprise Java Tooling: easy to control
+					and deploy to your server of choice.</p>
+					<br />
+				<p>FREE</p>
+					
+					
+				<h3>Cons:</h3>
+					<br />
+				<p>The more plugins, the more can go wrong, lack 
+					of quality control</p>
+					<br />
+				<p>Not all languages supported. </p>
+				</p>
+	    		
+	    	</div>
+	    </div>
+	    <div class="section" id="section4">
+	    	<div class="intro">
+	    		<h1>Specs and Plugins</h1>
+				<br />
+	    		<p>Windows operating system and Java Runtime Environment (JRE)</p>
+				<br />
+	    		<p>Contains an existensible plugin environment for customization.  Users can utilize, write, and contribute plugins </p>
+	    	</div>
+	    </div>
+		
+	</div>
+
+</body>
+</html>
